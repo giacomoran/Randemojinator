@@ -1,0 +1,63 @@
+/* Do not remove this comments bellow. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: tomato;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  & .emojicontainer {
+      height: 70vh;
+      position: relative;
+      & .clickhandler {
+          position: absolute;
+          top: 50vh;
+          margin-top: -80px;
+          margin-left: -80px;
+      }
+      &  img {
+          position: absolute;
+      }
+      & .clickhandler {
+          width: 160px;
+          height: 160px;
+      }
+  }
+
+  & .infos {
+      font-size: 2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1em;
+  }
+
+  & footer {
+      color: rgba(255,255,255,0.4);
+      & a {
+          color: rgba(255,255,255,0.6);
+      }
+  }
+}
+
+/* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector
+// endinjector
