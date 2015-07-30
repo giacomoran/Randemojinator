@@ -1,0 +1,102 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+.share-container a[class*="entypo-"]:before,
+.share-container span[class*="entypo-"]:before {
+	font-family: 'entypo', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+
+.share-container a {
+	text-decoration: none;
+}
+
+.share-container ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.share-container .clearfix { *zoom: 1; }
+.share-container .clearfix:before,
+.share-container .clearfix:after {
+	content: "";
+	display: table;
+}
+.share-container .clearfix:after { clear: both; }
+
+.share-container {
+	height: 64px;
+	width: 304px;
+}
+
+/* ---------- SHARE-BUTTON ---------- */
+
+.share-container .button {
+	border-radius: 8px;
+	color: #fff;
+	display: block;
+	font-size: 24px;
+	height: 64px;
+	line-height: 64px;
+	text-align: center;
+	-webkit-transition: -webkit-transform .2s;
+	-moz-transition: -moz-transform .2s;
+	-ms-transition: -ms-transform .2s;
+	-o-transition: -o-transform .2s;
+	transition: all .2s;
+  -webkit-transform: translateZ(1);
+	width: 64px;
+}
+
+.share-container .button:hover {
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
+.share-container .share {
+	background: #444;
+	box-shadow: 0 4px 0 darken(#444, 10);
+	width: 304px;
+}
+
+.share-container .twitter {
+	background: #00acee;
+	box-shadow: 0 4px 0 darken(#00acee, 10);
+}
+
+.share-container .facebook {
+	background: #3B5998;
+	box-shadow: 0 4px 0 darken(#3B5998, 10);
+}
+
+.share-container .google {
+	background: #CC3732;
+	box-shadow: 0 4px 0 darken(#CC3732, 10);
+}
+
+.share-container .btn-share {
+	display: inline-block;
+	position: relative;
+}
+
+.share-container .btn-share li {
+	float: left;
+	margin: 0 8px;
+}
+
+.share-container .btn-share li:first-child {
+	margin-left: 0;
+	position: absolute;
+}
+
+.share-container .btn-share li:nth-child(2) {
+	margin: 0 8px 0 80px;
+}
+
+.share-container .btn-share li:last-child {
+	margin: 0 0 0 8px
+}
