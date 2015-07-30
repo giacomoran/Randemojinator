@@ -40,6 +40,10 @@ a {
       }
   }
 
+  & canvas {
+      display: none;
+  }
+
   & .infos {
       font-size: 2em;
       text-transform: uppercase;

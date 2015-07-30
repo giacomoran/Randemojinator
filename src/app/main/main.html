@@ -3,13 +3,15 @@
 
     <div class="emojicontainer">
         <div class="clickhandler" ng-click="updateEmoji()">
-            <img src="/assets/images/background{{emoji.background}}.png" alt="background">
-            <img src="/assets/images/mouth{{emoji.mouth}}.png" alt="mouth">
-            <img src="/assets/images/eyeleft{{emoji.eyeleft}}.png" alt="eyeleft">
-            <img src="/assets/images/eyeright{{emoji.eyeright}}.png" alt="eyeright">
-            <img src="/assets/images/extra{{emoji.extra}}.png" alt="extra">
+            <img id="background" src="/assets/images/background{{emoji.background}}.png" alt="background">
+            <img id="mouth" src="/assets/images/mouth{{emoji.mouth}}.png" alt="mouth">
+            <img id="eyeleft" src="/assets/images/eyeleft{{emoji.eyeleft}}.png" alt="eyeleft">
+            <img id="eyeright" src="/assets/images/eyeright{{emoji.eyeright}}.png" alt="eyeright">
+            <img id="extra" src="/assets/images/extra{{emoji.extra}}.png" alt="extra">
         </div>
     </div>
+
+    <canvas id="canvas"></canvas>
 
     <div class="infos">
         <p>Don't like it? Just tap on it.</p>

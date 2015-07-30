@@ -11,6 +11,12 @@
     var colorArray = ["#F8DE73", "#7ECEFD", "#675FD6", "#FF4A4A", "#9CABE4", "#3FC380"];
     var bgColor;
 
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    canvas.width = 160;
+    canvas.height = 160;
+
+
     $scope.emoji = {
         background: '01',
         mouth: '01',
@@ -27,10 +33,40 @@
         e.eyeright = eyerightRand();
         e.extra = extraRand();
         $scope.bgStyle = {"background-color": bgRand() };
-        bgColor = $scope.bgStyle["background-color"]; 
+        bgColor = $scope.bgStyle["background-color"];
+        $('#background').on('load', function() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            generateCanvas();
+        });
+        $('.clickhandler > img').each(function(){
+        	if (!this.complete) {
+        		$(this).load(function(){
+                    generateCanvas();
+        		});
+        	} else {
+                generateCanvas();
+        	}
+        });
     };
 
     $scope.updateEmoji();
+
+    function generateCanvas() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        var backgroundEl = document.getElementById('background');
+        var mouthEl = document.getElementById('mouth');
+        var eyeleftEl = document.getElementById('eyeleft');
+        var eyerightEl = document.getElementById('eyeright');
+        var extraEl = document.getElementById('extra');
+
+        context.globalAlpha = 1.0;
+        context.drawImage(backgroundEl, 0, 0);
+        context.drawImage(mouthEl, 0, 0);
+        context.drawImage(eyeleftEl, 0, 0);
+        context.drawImage(eyerightEl, 0, 0);
+        context.drawImage(extraEl, 0, 0);
+    }
 
     function backgroundRand() {
         var rand = Math.floor(1 + Math.random()*58);
