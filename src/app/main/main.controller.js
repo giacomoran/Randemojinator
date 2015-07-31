@@ -17,7 +17,8 @@
     canvas.height = 160;
 
     $scope.emoji = $location.search();
-    $scope.absurl = $location.absUrl();
+    $scope.absurl = encodeURIComponent($location.absUrl());
+    console.log($scope.absurl);
 
     $scope.updateEmoji = function() {
         var e = $scope.emoji;
