@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope) {
+  function MainController($scope, $location) {
     var eyeleft;
     var colorArray = ["#F8DE73", "#7ECEFD", "#675FD6", "#FF4A4A", "#9CABE4", "#3FC380"];
     var bgColor;
@@ -16,14 +16,8 @@
     canvas.width = 160;
     canvas.height = 160;
 
-
-    $scope.emoji = {
-        background: '01',
-        mouth: '01',
-        eyeleft: '01',
-        eyeright: '01',
-        extra: '01'
-    };
+    $scope.emoji = $location.search();
+    $scope.absurl = $location.absUrl();
 
     $scope.updateEmoji = function() {
         var e = $scope.emoji;
@@ -32,6 +26,11 @@
         e.eyeleft = eyeleftRand();
         e.eyeright = eyerightRand();
         e.extra = extraRand();
+        $location.search('background', e.background);
+        $location.search('mouth', e.mouth);
+        $location.search('eyeleft', e.eyeleft);
+        $location.search('eyeright', e.eyeright);
+        $location.search('extra', e.extra);
         $scope.bgStyle = {"background-color": bgRand() };
         bgColor = $scope.bgStyle["background-color"];
         $('#background').on('load', function() {
@@ -49,7 +48,10 @@
         });
     };
 
-    $scope.updateEmoji();
+    if($.isEmptyObject($location.search())) {
+        $scope.updateEmoji();
+    }
+    console.log($location.search());
 
     function generateCanvas() {
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -143,7 +145,7 @@
 		var $this = $(this);
 
 		$this.animate({
-			'width': $this.width() == 304 ? '64px' : '304px'
+			'width': $this.width() === 304 ? '64px' : '304px'
 		}, 300, 'swing');
 
 	});
