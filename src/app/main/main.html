@@ -2,16 +2,15 @@
 
 
     <div class="emojicontainer">
-        <div class="clickhandler" ng-click="updateEmoji()">
+        <div class="clickhandler" ng-click="update()">
             <img id="background" src="/assets/images/background{{emoji.background}}.png" alt="background">
             <img id="mouth" src="/assets/images/mouth{{emoji.mouth}}.png" alt="mouth">
             <img id="eyeleft" src="/assets/images/eyeleft{{emoji.eyeleft}}.png" alt="eyeleft">
             <img id="eyeright" src="/assets/images/eyeright{{emoji.eyeright}}.png" alt="eyeright">
             <img id="extra" src="/assets/images/extra{{emoji.extra}}.png" alt="extra">
+            <canvas id="canvas"></canvas>
         </div>
     </div>
-
-    <canvas id="canvas"></canvas>
 
     <div class="share-container">
         <ul class="btn-share clearfix">

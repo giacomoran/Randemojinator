@@ -10,6 +10,7 @@
     var eyeleft;
     var colorArray = ["#F8DE73", "#7ECEFD", "#675FD6", "#FF4A4A", "#9CABE4", "#3FC380"];
     var bgColor;
+    var initialized = false;
 
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
@@ -25,17 +26,38 @@
         e.eyeleft = eyeleftRand();
         e.eyeright = eyerightRand();
         e.extra = extraRand();
+        $scope.bgStyle = {"background-color": bgRand() };
+        bgColor = $scope.bgStyle["background-color"];
+        if(!initialized) {
+            updateURL();
+        }
+        initialized = true;
+    };
+
+    if($.isEmptyObject($location.search())) {
+        $scope.updateEmoji();
+        updateCanvas();
+    }
+    updateCanvas();
+
+    $scope.update = function() {
+        $scope.updateEmoji();
+        updateURL();
+        updateCanvas();
+    };
+
+    function updateURL() {
+        var e = $scope.emoji;
         $location.search('background', e.background);
         $location.search('mouth', e.mouth);
         $location.search('eyeleft', e.eyeleft);
         $location.search('eyeright', e.eyeright);
         $location.search('extra', e.extra);
-        $scope.bgStyle = {"background-color": bgRand() };
-        bgColor = $scope.bgStyle["background-color"];
-        $('#background').on('load', function() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            generateCanvas();
-        });
+
+        $scope.absurl = encodeURIComponent($location.absUrl());
+    }
+
+    function updateCanvas() {
         $('.clickhandler > img').each(function(){
         	if (!this.complete) {
         		$(this).load(function(){
@@ -45,13 +67,7 @@
                 generateCanvas();
         	}
         });
-        $scope.absurl = encodeURIComponent($location.absUrl());
-    };
-
-    if($.isEmptyObject($location.search())) {
-        $scope.updateEmoji();
     }
-    console.log($location.search());
 
     function generateCanvas() {
         context.clearRect(0, 0, canvas.width, canvas.height);

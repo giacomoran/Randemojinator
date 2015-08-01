@@ -30,18 +30,16 @@ a {
           top: 50vh;
           margin-top: -80px;
           margin-left: -80px;
-      }
-      &  img {
-          position: absolute;
-      }
-      & .clickhandler {
           width: 160px;
           height: 160px;
+      }
+      &  img {
+          display: none;
       }
   }
 
   & canvas {
-      display: none;
+      position: absolute;
   }
 
   & .infos {
