@@ -3,6 +3,8 @@ bower_components/
 .sass-cache/
 .idea/
 .tmp/
+.git/
+src/
 
 # Created by https://www.gitignore.io
 
