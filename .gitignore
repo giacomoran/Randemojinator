@@ -4,7 +4,7 @@ bower_components/
 .idea/
 .tmp/
 dist/
-.htaccess
+.htpasswd
 
 # Created by https://www.gitignore.io
 
