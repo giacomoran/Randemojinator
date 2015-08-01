@@ -29,24 +29,12 @@
         $scope.bgStyle = {"background-color": bgRand() };
         bgColor = $scope.bgStyle["background-color"];
         if(!initialized) {
-            updateURL();
+            $scope.updateURL();
         }
         initialized = true;
     };
 
-    if($.isEmptyObject($location.search())) {
-        $scope.updateEmoji();
-        updateCanvas();
-    }
-    updateCanvas();
-
-    $scope.update = function() {
-        $scope.updateEmoji();
-        updateURL();
-        updateCanvas();
-    };
-
-    function updateURL() {
+    $scope.updateURL =function() {
         var e = $scope.emoji;
         $location.search('background', e.background);
         $location.search('mouth', e.mouth);
@@ -56,6 +44,18 @@
 
         $scope.absurl = encodeURIComponent($location.absUrl());
     }
+
+    if($.isEmptyObject($location.search())) {
+        $scope.updateEmoji();
+        updateCanvas();
+    }
+    updateCanvas();
+
+    $scope.update = function() {
+        $scope.updateEmoji();
+        $scope.updateURL();
+        updateCanvas();
+    };
 
     function updateCanvas() {
         $('.clickhandler > img').each(function(){
