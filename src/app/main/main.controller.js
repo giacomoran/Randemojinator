@@ -8,7 +8,7 @@
   /** @ngInject */
   function MainController($scope, $location) {
     var eyeleft;
-    var colorArray = ["#F8DE73", "#7ECEFD", "#675FD6", "#FF4A4A", "#9CABE4", "#3FC380"];
+    var colorArray = ["tomato", "#7ECEFD", "#675FD6", "#9CABE4", "#3FC380", "#2F584C", "#F6511D", "#C5D86D"];
     var bgColor;
     var initialized = false;
 
@@ -42,8 +42,12 @@
         $location.search('eyeright', e.eyeright);
         $location.search('extra', e.extra);
 
+        $scope.encodeURL();
+    };
+
+    $scope.encodeURL = function() {
         $scope.absurl = encodeURIComponent($location.absUrl());
-    }
+    };
 
     if($.isEmptyObject($location.search())) {
         $scope.updateEmoji();
