@@ -37,9 +37,22 @@ a {
   align-items: center;
   justify-content: space-between;
 
+  & > .header {
+      & h1 {
+          font-size: 5em;
+          color: white;
+          padding-top: 20px;
+      }
+      & p {
+          margin-top: -1.5em;
+          font-size: 2em;
+          color: rgba(255,255,255,0.6);
+          text-align: center;
+      }
+  }
+
   & .emojicontainer {
-      height: 70vh;
-      position: relative;
+      height: 35%;
       & .clickhandler {
           position: absolute;
           top: 50vh;
@@ -70,17 +83,17 @@ a {
   & .infos {
       font-size: 2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.6);
       font-weight: 900;
       text-align: center;
       line-height: 1em;
   }
 
   & footer {
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.5);
       text-align: center;
       & a {
-          color: rgba(255,255,255,0.6);
+          color: rgba(255,255,255,0.7);
           &:hover {
               border-bottom: solid 2px;
           }
