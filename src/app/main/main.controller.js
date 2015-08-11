@@ -90,6 +90,10 @@
         context.drawImage(extraEl, 0, 0);
     }
 
+    function canvasToImage() {
+        return canvas.toDataURL();
+    }
+
     function backgroundRand() {
         var rand = Math.floor(1 + Math.random()*58);
         if (rand > 56) {
