@@ -5,15 +5,6 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 @media (max-height: 700px) {
-    .emojicontainer {
-        height: 160px !important;
-    }
-    .clickhandler {
-        top: none !important;
-    }
-}
-
-@media (max-height: 600px) {
     .container {
         height: 700px !important;
     }
@@ -28,6 +19,12 @@
     }
     .header p {
         margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    #rh-bnr-wrp_52627_80468_3, #rh-bnr-wrp_52627_80468_4 {
+        display: none !important;
     }
 }
 
