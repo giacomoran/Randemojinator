@@ -38,7 +38,8 @@ a {
 }
 
 .container {
-  width: 100vw;
+  width: 100%;
+  min-width: 425px;
   height: 100vh;
   background-color: #F6511D;
   display: flex;
@@ -47,7 +48,7 @@ a {
   justify-content: space-between;
 
   & > .header {
-      width: 100vw;
+      width: 100%;
       & h1 {
           font-size: 5em;
           color: white;
