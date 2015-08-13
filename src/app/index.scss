@@ -5,7 +5,7 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 @media (max-height: 700px) {
-    .container {
+    .container, .about-cont {
         height: 700px !important;
     }
     .clickhandler {
@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 700px) {
-    .header h1 {
+    .header h1, .about-cont h1 {
         font-size: 2em !important;
     }
     .header p {
@@ -125,30 +125,35 @@ a {
 }
 
 .about-cont {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #F6511D;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .text-cont {
+        max-width: 500px;
+        text-align: center;
+    }
 
     & h1 {
         color: white;
         font-size: 3em;
-
     }
     & p {
         color: rgba(255,255,255,0.5);
         line-height: 1.8em;
         font-size: 1.2em;
-        max-width: 500px;
-        text-align: center;
     }
     a {
         color: rgba(255,255,255,0.7);
+        border-radius: 4px;
+        border: 2px solid rgba(255,255,255,0.7);;
+        padding: 3px 6px;
+        transition: .2s ease;
         &:hover {
-            border-bottom: solid 2px;
+            background-color: rgba(255,255,255,0.3);
         }
     }
 }
