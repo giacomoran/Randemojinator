@@ -3,13 +3,11 @@
 
   angular
     .module('randemojinator')
-    .config(config);
+    .config(['$compileProvider', config]);
 
   /** @ngInject */
-  function config($logProvider) {
-    // Enable log
-    $logProvider.debugEnabled(true);
-
+  function config($compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|file):|data:image\//);
   }
 
 })();

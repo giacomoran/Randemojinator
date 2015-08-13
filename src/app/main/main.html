@@ -13,18 +13,18 @@
             <img id="eyeright" src="/assets/images/eyeright{{emoji.eyeright}}.png" alt="eyeright">
             <img id="extra" src="/assets/images/extra{{emoji.extra}}.png" alt="extra">
             <canvas id="canvas"></canvas>
-            <img id="cimage" src="" alt="">
         </div>
     </div>
 
     <div class="share-container">
         <ul class="btn-share clearfix">
-            <li><a href="#" ng-click="encodeURL()" class="button share entypo-share"></a></li>
-            <li><a ng-href="https://twitter.com/intent/tweet?text=I just generated this cool emoji {{absurl}} using randemojinator.co" class="button twitter entypo-twitter" target="_blank"></a></li>
+            <li><a href="#" ng-click="encodeURL()" class="button share"><div class="svg entypo-share"></div></a></li>
+            <li><a ng-href="https://twitter.com/intent/tweet?text=I just generated this cool emoji {{absurl}} using randemojinator.co" class="button twitter" target="_blank"><div class="svg entypo-twitter"></div></a></li>
             <li><a ng-href="https://www.facebook.com/dialog/share?app_id=1148515425175133&display=popup&href={{absurl}}&redirect_uri=http%3A%2F%2Frandemojinator.co" onclick="javascript:window.open(this.href,
-  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="button facebook entypo-facebook" target="_blank"></a></li>
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="button facebook" target="_blank"><div class="svg entypo-facebook"></div></a></li>
             <li><a ng-href="https://plus.google.com/share?url={{absurl}}" onclick="javascript:window.open(this.href,
-  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="button google entypo-gplus" target="_blank"></a></li>
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="button google" target="_blank"><div class="svg entypo-gplus"></div></a></li>
+            <li><a ng-click="getImg($event)" href download="randemoji.png" class="button download" target="_blank"><div class="svg entypo-download"></div></a></li>
         </ul>
     </div>
 

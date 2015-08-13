@@ -1,11 +1,4 @@
-@import url(http://weloveiconfonts.com/api/?family=entypo);
-
-.share-container a[class*="entypo-"]:before,
-.share-container span[class*="entypo-"]:before {
-	font-family: 'entypo', sans-serif;
-}
-
-/* ---------- GENERAL ---------- */
+// Entypo pictograms by Daniel Bruce — www.entypo.com
 
 .share-container a {
 	text-decoration: none;
@@ -27,7 +20,7 @@
 
 .share-container {
 	height: 64px;
-	width: 304px;
+	width: 384px;
 }
 
 /* ---------- SHARE-BUTTON ---------- */
@@ -57,25 +50,52 @@
 	transform: scale(1.05);
 }
 
+.svg {
+	width: 30px;
+	display: inline-block;
+	height: 30px;
+	margin-top: 8px;
+}
+
 .share-container .share {
 	background: #444;
 	box-shadow: 0 4px 0 darken(#444, 10);
-	width: 304px;
+	width: 384px;
+}
+.entypo-share:before{
+	content:url("/assets/share.svg");
 }
 
 .share-container .twitter {
 	background: #00acee;
 	box-shadow: 0 4px 0 darken(#00acee, 10);
 }
+.entypo-twitter:before{
+	content:url("/assets/twitter.svg");
+}
 
 .share-container .facebook {
 	background: #3B5998;
 	box-shadow: 0 4px 0 darken(#3B5998, 10);
 }
+.entypo-facebook:before{
+	content:url("/assets/facebook.svg");
+}
 
 .share-container .google {
 	background: #CC3732;
 	box-shadow: 0 4px 0 darken(#CC3732, 10);
+}
+.entypo-gplus:before{
+	content:url("/assets/google+.svg");
+}
+
+.share-container .download {
+	background: #94ed88;
+	box-shadow: 0 4px 0 darken(#94ed88, 10);
+}
+.entypo-download:before{
+	content:url("/assets/download.svg");
 }
 
 .share-container .btn-share {
@@ -97,6 +117,10 @@
 	margin: 0 8px 0 80px;
 }
 
+.share-container .btn-share li:nth-child(3) {
+	margin: 0 8px 0 8px;
+}
+
 .share-container .btn-share li:last-child {
-	margin: 0 0 0 8px
+	margin: 0 0 0 8px;
 }

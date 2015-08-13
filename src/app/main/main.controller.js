@@ -12,10 +12,10 @@
     var bgColor;
     var initialized = false;
 
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
-    canvas.width = 160;
-    canvas.height = 160;
+    $scope.canvas = document.getElementById('canvas');
+    var context = $scope.canvas.getContext('2d');
+    $scope.canvas.width = 160;
+    $scope.canvas.height = 160;
 
     $scope.emoji = $location.search();
 
@@ -49,6 +49,12 @@
         $scope.absurl = encodeURIComponent($location.absUrl());
     };
 
+    $scope.getImg = function($event) {
+        var elem = $event.currentTarget || $event.srcElement;
+        var e = $(elem);
+        e.attr("href", $scope.canvas.toDataURL());
+    };
+
     if($.isEmptyObject($location.search())) {
         $scope.updateEmoji();
         updateCanvas();
@@ -66,17 +72,15 @@
         	if (!this.complete) {
         		$(this).load(function(){
                     generateCanvas();
-                    $("#cimage").attr("src", canvasToImage());
         		});
         	} else {
                 generateCanvas();
-                $("#cimage").attr("src", canvasToImage());
         	}
         });
     }
 
-    function generateCanvas() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
+    function generateCanvas(getbase) {
+        context.clearRect(0, 0, $scope.canvas.width, $scope.canvas.height);
 
         var backgroundEl = document.getElementById('background');
         var mouthEl = document.getElementById('mouth');
@@ -90,12 +94,11 @@
         context.drawImage(eyeleftEl, 0, 0);
         context.drawImage(eyerightEl, 0, 0);
         context.drawImage(extraEl, 0, 0);
-    }
 
-    function canvasToImage() {
-        return canvas.toDataURL();
+        if(getbase === true) {
+            return $scope.canvas.toDataURL();
+        }
     }
-
 
     function backgroundRand() {
         var rand = Math.floor(1 + Math.random()*58);
@@ -172,7 +175,7 @@
 		var $this = $(this);
 
 		$this.animate({
-			'width': $this.width() === 304 ? '64px' : '304px'
+			'width': $this.width() === 384 ? '64px' : '384px'
 		}, 300, 'swing');
 
 	});
