@@ -8,6 +8,6 @@ Web app that let's you create randomized emojis.
 - Share the emoji on Twitter, Facebook or Instagram.
 - Download a PNG file.
 - Save emojis you like in the web app.
-- 
+
 #### Future features
 - Create animated GIF emojis you generate.
