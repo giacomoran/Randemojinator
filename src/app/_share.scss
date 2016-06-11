@@ -19,7 +19,7 @@
 .share-container .clearfix:after { clear: both; }
 
 .share-container {
-	height: 64px;
+	height: 148px;
 	width: 384px;
 }
 
@@ -96,6 +96,13 @@
 }
 .entypo-download:before{
 	content:url("/assets/download.svg");
+}
+
+.share-container .donate {
+	background: #FFA000;
+	box-shadow: 0 4px 0 darken(#FFA000, 10);
+	width: 128px;
+	margin: 0 auto 20px auto;
 }
 
 .share-container .btn-share {
